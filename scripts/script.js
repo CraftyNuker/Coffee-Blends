@@ -71,29 +71,25 @@ function changeModel() {
 modelButton.addEventListener("click", changeModel);
 
 /****************** duration button logic ******************/
-/*  - first, create a variable to represent the "Change Duration" pseudo-button.
-    - then, create a function called changeDuration() that will
+/*  - first, create a variable to represent the "Change Duration" pseudo-button. Done
+    - then, create a function called changeDuration() that will Done
         - create a variable to represent the duration-text span element
         - prompt() the user for a new duration
         - save the result of the prompt() to the duration variable
         - change the innerHTML of the duration-text span element to this new value
         - recalculate() the total cost/
-    - finally, attach this function to the "Change Duration" pseudo-button, so it runs whenever the button is clicked.
+    - finally, attach this function to the "Change Duration" pseudo-button, so it runs whenever the button is clicked. Done
 */
 
 // INSERT YOUR CODE HERE
 
-let durationButton = document.getElementById("change-duration-button");
+let changeDurationButton = document.getElementById("duration-button");
+changeDurationButton.addEventListener("click", changeDuration);
 
 function changeDuration() {
   let durationText = document.getElementById("duration-text");
-  let newDuration = prompt("Enter new duration:");
+  duration = prompt("Please enter the amount of days you wish to rent: ");
+  durationText.innerHTML = duration;
 
-  if (newDuration) {
-    duration = newDuration;
-    durationText.innerHTML = `Duration: ${duration}`;
-    recalculate();
-  }
+  recalculate();
 }
-
-durationButton.addEventListener("click", changeDuration);
